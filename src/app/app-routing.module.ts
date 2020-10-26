@@ -11,6 +11,8 @@ import { UpdateComponent as UpdateAuthorComponent } from './author/update/update
 
 import { CreateComponent as CreateBannerComponent } from './banner/create/create.component';
 import { CreateComponent as CreateUserComponent } from './user/create/create.component';
+import { ListComponent } from './user/list/list.component'
+
 const routes: Routes = [
     { path: 'book/create', component: CreateBookComponent },
     { path: 'book/update', component: UpdateBookComponent },
@@ -20,6 +22,7 @@ const routes: Routes = [
     { path: 'author/list', component: ListAuthorComponent },
     { path: 'banner/create', component: CreateBannerComponent },
     { path: 'user/create', component: CreateUserComponent },
+    { path: 'user/list', component: ListComponent },
 ];
 
 @NgModule({

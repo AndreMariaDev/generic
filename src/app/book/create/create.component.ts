@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
+import { FormBuilder,FormControl,FormGroup, Validators } from '@angular/forms';
 
 import { Book } from '../book.model';
 import { BookService } from '../book.service';
@@ -21,8 +22,13 @@ export class CreateComponent extends CreateBaseComponent<Book>{
   book: Book;
   submitted = false;
 
-  constructor(appService: BookService, private appAuthorService: AuthorService,dialog: MatDialog) {
-    super(appService,Book,dialog);
+  constructor(appService: BookService,private appAuthorService: AuthorService,dialog: MatDialog,formBuilder : FormBuilder) {
+    super(appService,Book,formBuilder,dialog);
+
+    this.formGroup.addControl('Name', new FormControl(this.entity.Name, Validators.required));;
+    this.formGroup.addControl('Publisher', new FormControl(this.entity.Publisher, Validators.required));
+    this.formGroup.addControl('Status', new FormControl(this.entity.Status, Validators.required));
+
     this.authors = new Array<Author>();
     let par = [];
 
@@ -43,6 +49,28 @@ export class CreateComponent extends CreateBaseComponent<Book>{
         console.log(error);
       });
   }
+  // constructor(appService: BookService, private appAuthorService: AuthorService,dialog: MatDialog) {
+  //   super(appService,Book,dialog);
+  //   this.authors = new Array<Author>();
+  //   let par = [];
+
+  //   par.push({ key:'_offset',values:'1'});
+  //   par.push({ key:'_limit',values:'10'});
+
+  //   this.appAuthorService.GetByFilter(new QueryOptionsGeneric(par)).subscribe(
+  //     response => {
+  //       console.log('GetByFilter');
+
+  //       response.map(resp => {
+  //         this.authors.push(resp);
+  //         console.log(this.authors);
+  //       })
+  //       console.log(this.authors);
+  //     },
+  //     error => {
+  //       console.log(error);
+  //     });
+  // }
 
   //ToDo: tetetttetettte
 }

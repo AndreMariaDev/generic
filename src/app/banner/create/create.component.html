@@ -83,67 +83,71 @@
       </div>
   </div>
 </div> -->
-
-
+<!-- <input type="text" matInput required formControlName="Name">
+<form [formGroup]="form"></form> -->
 <h2 mat-dialog-title>Novo conteúdo</h2>
-<mat-dialog-content class="mat-typography">
-    <div style="width: 500px;">
-        <div style="display: flex; justify-content: start;">
-            <mat-form-field appearance="outline" style="margin-right: 3%; width: 250px;">
-                <mat-label>Nome: </mat-label>
-                <input type="text" matInput required [(ngModel)]="entity.Name">
-            </mat-form-field>
-        </div>
-        <!-- <div style="display: flex; justify-content: start;">
-            <mat-form-field appearance="outline" style="margin-right: 3%; width: 250px;">
-                <ngx-mat-file-input  placeholder="Banner"></ngx-mat-file-input>
-            </mat-form-field>
-        </div> -->
-        <div style="display: flex; justify-content: start;">
-            <mat-form-field appearance="outline" style="margin-right: 3%; width: 250px;">
-                <mat-label>Titulo: </mat-label>
-                <input type="text" matInput [(ngModel)]="entity.Title">
-            </mat-form-field>
-        </div>
-        <div style="display: flex; justify-content: start;">
-            <mat-form-field appearance="outline" style="margin-right: 3%; width: 250px;">
-                <mat-label>Texto: </mat-label>
-                <textarea matInput></textarea>
-            </mat-form-field>
-        </div>
-        <div style="display: flex; justify-content: start;">
-            <mat-form-field appearance="outline" style="margin-right: 3%; width: 250px;">
-                <mat-label>URL: </mat-label>
-                <input type="text" matInput [(ngModel)]="entity.URL">
-            </mat-form-field>
-        </div>
-        <div style="display: flex; justify-content: start;">
-            <mat-form-field appearance="outline" style="margin-right: 3%; width: 250px;">
-                <mat-label>Aba/Janela</mat-label>
-                <mat-select [(ngModel)]="entity.Window">
-                    <mat-option value="Aba">Aba</mat-option>
-                    <mat-option value="Janela">Janela</mat-option>
-                </mat-select>
-            </mat-form-field>
-        </div>
-        <div style="display: flex; justify-content: start;">
-            <mat-form-field appearance="outline" style="margin-right: 3%; width: 250px;">
-                <mat-label>Prioridade: </mat-label>
-                <input type="text" matInput [(ngModel)]="entity.Order">
-            </mat-form-field>
-        </div>
-        <div style="display: flex; justify-content: start;">
-            <mat-form-field appearance="outline" style="margin-right: 3%; width: 250px;">
-                <mat-label>Status</mat-label>
-                <mat-select [(ngModel)]="entity.Status">
-                    <mat-option  value="1">Ativo</mat-option>
-                    <mat-option  value="0">Inativo</mat-option>
-                </mat-select>
-            </mat-form-field>
-        </div>
-    </div>
-</mat-dialog-content>
-<mat-dialog-actions align="end">
-    <button mat-button mat-dialog-close>Cancel</button>
-    <button mat-button [mat-dialog-close]="true" (click)="save()" cdkFocusInitial>Salvar</button>
-</mat-dialog-actions>
+<form [formGroup]="formGroup">
+  <mat-dialog-content class="mat-typography">
+      <div style="width: 500px;">
+          <div style="display: flex; justify-content: start;">
+              <mat-form-field appearance="outline" style="margin-right: 3%; width: 250px;">
+                  <mat-label>Nome: </mat-label>
+                  <input type="text" matInput required  formControlName="Name">
+
+              </mat-form-field>
+         </div>
+          <!-- <div style="display: flex; justify-content: start;">
+              <mat-form-field appearance="outline" style="margin-right: 3%; width: 250px;">
+                  <ngx-mat-file-input  placeholder="Banner"></ngx-mat-file-input>
+              </mat-form-field>
+          </div> -->
+          <div style="display: flex; justify-content: start;">
+              <mat-form-field appearance="outline" style="margin-right: 3%; width: 250px;">
+                  <mat-label>Titulo: </mat-label>
+                  <input type="text" matInput  formControlName="Title">
+              </mat-form-field>
+          </div>
+          <div style="display: flex; justify-content: start;">
+              <mat-form-field appearance="outline" style="margin-right: 3%; width: 250px;">
+                  <mat-label>Texto: </mat-label>
+                  <textarea matInput></textarea>
+              </mat-form-field>
+          </div>
+          <div style="display: flex; justify-content: start;">
+              <mat-form-field appearance="outline" style="margin-right: 3%; width: 250px;">
+                  <mat-label>URL: </mat-label>
+                  <input type="text" matInput  formControlName="URL">
+
+              </mat-form-field>
+          </div>
+          <div style="display: flex; justify-content: start;">
+              <mat-form-field appearance="outline" style="margin-right: 3%; width: 250px;">
+                  <mat-label>Aba/Janela</mat-label>
+                  <mat-select  formControlName="Window">
+                      <mat-option value="Aba">Aba</mat-option>
+                      <mat-option value="Janela">Janela</mat-option>
+                  </mat-select>
+              </mat-form-field>
+          </div>
+          <div style="display: flex; justify-content: start;">
+              <mat-form-field appearance="outline" style="margin-right: 3%; width: 250px;">
+                  <mat-label>Prioridade: </mat-label>
+                  <input type="text" matInput required  formControlName="Order">
+              </mat-form-field>
+          </div>
+          <div style="display: flex; justify-content: start;">
+              <mat-form-field appearance="outline" style="margin-right: 3%; width: 250px;">
+                  <mat-label>Status</mat-label>
+                  <mat-select formControlName="Status" >
+                      <mat-option  value="1">Ativo</mat-option>
+                      <mat-option  value="0">Inativo</mat-option>
+                  </mat-select>
+              </mat-form-field>
+          </div>
+      </div>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+      <button mat-button mat-dialog-close>Cancel</button>
+      <button mat-button [mat-dialog-close]="true" (click)="save()" cdkFocusInitial>Salvar</button>
+  </mat-dialog-actions>
+</form>

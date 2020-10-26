@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 import { MatCardModule } from '@angular/material/card';
@@ -30,20 +30,25 @@ import { DialogComponent } from './dialog/dialog.component';
 import { AuthorModule } from './author/author.module';
 import { BookModule } from './book/book.module';
 import { CreateComponent as CreateBannerComponent } from './banner/create/create.component';
-import { CreateComponent } from './user/create/create.component'
+import { CreateComponent } from './user/create/create.component';
+import { ListComponent } from './user/list/list.component';
+import { UpdateComponent } from './user/update/update.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     DialogComponent,
     CreateBannerComponent,
-    CreateComponent
+    CreateComponent,
+    ListComponent,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     MatButtonModule,
     MatMenuModule,

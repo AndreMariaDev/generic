@@ -11,6 +11,7 @@ export class User extends Base  {
     Name: String;
     Email: String;
     UserCodeExternal: String;
+    Profile: Number;
 }
 
 export class UserSerializer implements Serializer{
@@ -25,7 +26,8 @@ export class UserSerializer implements Serializer{
         Code: json.code,
         Name: json.name,
         Email: json.email,
-        UserCodeExternal: json.userCodeExternal
+        UserCodeExternal: json.userCodeExternal,
+        Profile: json.profile
     };
     return user;
   }
@@ -42,7 +44,8 @@ export class UserSerializer implements Serializer{
         Code: user.Code,
         Name: user.Name,
         Email: user.Email,
-        UserCodeExternal: user.UserCodeExternal
+        UserCodeExternal: user.UserCodeExternal,
+        Profile: Number(user.Profile)
     };
   }
 }
