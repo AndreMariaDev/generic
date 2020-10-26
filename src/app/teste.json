@@ -1,0 +1,34 @@
+[
+  {
+    "Id": "34fa05f2-c6a8-4afc-adba-2ca7e1a75939",
+    "IsActive": true,
+    "CreateDate": "2020-10-23T17:34:44.145Z",
+    "Status": 1,
+    "UserCode": "123456",
+    "Name": "Andre Maria",
+    "Email": "admr@gft.com",
+    "UserCodeExternal": "123221"
+  },
+  {
+    "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    "isActive": true,
+    "createDate": "2020-10-23T17:37:10.202Z",
+    "status": 0,
+    "dateUpdate": "2020-10-23T17:37:10.202Z",
+    "userCode": "string",
+    "code": 0,
+    "userCodeExternal": "string",
+    "name": "string",
+    "email": "string"
+  },
+  {
+    "Id": "34fa05f2-c6a8-4afc-adba-2ca7e1a75939",
+    "IsActive": true,
+    "CreateDate": "2020-10-23T17: 34: 44.145Z",
+    "Status": 1,
+    "UserCode": "123456",
+    "Name": "Andre Maria",
+    "Email": "admr@gft.com",
+    "UserCodeExternal": "123221"
+  }
+]

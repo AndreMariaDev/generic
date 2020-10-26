@@ -1,8 +1,7 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
-
+import { CommonModule } from '@angular/common';
+//import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule} from '@angular/material/button';
@@ -17,34 +16,19 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTableModule} from '@angular/material/table';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatDialogModule} from '@angular/material/dialog';
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import {MatSelectModule} from '@angular/material/select';
 
 
-import {​​​​​ MatSelectModule }​​​​​ from '@angular/material/select';
-
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DialogComponent } from './dialog/dialog.component';
-import { AuthorModule } from './author/author.module';
-import { BookModule } from './book/book.module';
-import { CreateComponent as CreateBannerComponent } from './banner/create/create.component';
-import { CreateComponent } from './user/create/create.component'
+
+import { CreateComponent } from './create/create.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    DialogComponent,
-    CreateBannerComponent,
-    CreateComponent
-  ],
+  declarations: [CreateComponent],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
+    CommonModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     MatButtonModule,
     MatMenuModule,
     MatToolbarModule,
@@ -55,16 +39,10 @@ import { CreateComponent } from './user/create/create.component'
     MatGridListModule,
     MatExpansionModule,
     MatTableModule,
-    MatSelectModule,
-    AppRoutingModule,
     MatDialogModule,
     MatInputModule,
-    MDBBootstrapModule.forRoot(),
     MatFormFieldModule,
-    AuthorModule,
-    BookModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    MatSelectModule
+  ]
 })
-export class AppModule { }
+export class BannerModule { }

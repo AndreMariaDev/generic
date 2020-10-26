@@ -1,0 +1,48 @@
+
+<h2 mat-dialog-title>Novo conteúdo</h2>
+<mat-dialog-content class="mat-typography">
+    <div style="width: 500px;">
+        <div style="display: flex; justify-content: start;">
+            <mat-form-field appearance="outline" style="margin-right: 3%; width: 250px;">
+                <mat-label>Nome: </mat-label>
+                <input type="text" matInput required [(ngModel)]="entity.Name">
+            </mat-form-field>
+        </div>
+        <div style="display: flex; justify-content: start;">
+          <mat-form-field appearance="outline" style="margin-right: 3%; width: 250px;">
+              <mat-label>User Code External: </mat-label>
+              <input type="text" matInput [(ngModel)]="entity.UserCodeExternal">
+          </mat-form-field>
+        </div>
+        <div style="display: flex; justify-content: start;">
+            <mat-form-field appearance="outline" style="margin-right: 3%; width: 250px;">
+                <mat-label>Email: </mat-label>
+                <input type="text" matInput [(ngModel)]="entity.Email">
+            </mat-form-field>
+        </div>
+        <div style="display: flex; justify-content: start;">
+            <mat-form-field appearance="outline" style="margin-right: 3%; width: 250px;">
+                <mat-label>Status</mat-label>
+                <mat-select [(ngModel)]="entity.Status">
+                    <mat-option  value="1">Ativo</mat-option>
+                    <mat-option  value="0">Inativo</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div style="display: flex; justify-content: start;">
+          <mat-form-field appearance="outline" style="margin-right: 3%; width: 250px;">
+              <mat-label>Perfil</mat-label>
+              <mat-select [(ngModel)]="entity.Status">
+                  <mat-option  value="1">Analista</mat-option>
+                  <mat-option  value="2">Administrador</mat-option>
+              </mat-select>
+          </mat-form-field>
+        </div>
+
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button [mat-dialog-close]="true" (click)="save()" cdkFocusInitial>Salvar</button>
+</mat-dialog-actions>
+
