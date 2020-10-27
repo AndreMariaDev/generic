@@ -22,9 +22,10 @@ import {MatSelectModule} from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CreateComponent } from './create/create.component';
+import { UploadComponent } from './upload/upload.component';
 
 @NgModule({
-  declarations: [CreateComponent],
+  declarations: [CreateComponent, UploadComponent],
   imports: [
     CommonModule,
     BrowserAnimationsModule,

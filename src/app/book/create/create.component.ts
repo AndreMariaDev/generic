@@ -35,7 +35,7 @@ export class CreateComponent extends CreateBaseComponent<Book>{
     par.push({ key:'_offset',values:'1'});
     par.push({ key:'_limit',values:'10'});
 
-    this.appAuthorService.GetByFilter(new QueryOptionsGeneric(par)).subscribe(
+    this.appAuthorService.getByFilter(new QueryOptionsGeneric(par)).subscribe(
       response => {
         console.log('GetByFilter');
 

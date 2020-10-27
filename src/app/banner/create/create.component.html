@@ -1,90 +1,4 @@
-<!-- <div>
-  <div>
-    <div></div>
-      <div style="width: 500px;">
-          <div>
-              <div>Name</div>
-              <div>
-                  <input
-                  type="text"
-                  class="form-control"
-                  id="FirstName"
-                  required
-                  [(ngModel)]="entity.Name"
-                  name="Name"
-                  />
-              </div>
-          </div>
 
-          <div>
-              <div>Title</div>
-              <div>
-                  <input
-                  type="text"
-                  class="form-control"
-                  id="Title"
-                  required
-                  [(ngModel)]="entity.Title"
-                  name="Title"
-                />
-              </div>
-          </div>
-
-          <div>
-              <div>URL</div>
-              <div>
-                  <input
-                  type="text"
-                  class="form-control"
-                  id="URL"
-                  required
-                  [(ngModel)]="entity.URL"
-                  name="URL"
-                />
-              </div>
-          </div>
-
-          <div>
-            <div>Window</div>
-            <div>
-                <input
-                type="text"
-                class="form-control"
-                id="Window"
-                required
-                [(ngModel)]="entity.Window"
-                name="Window"
-              />
-            </div>
-          </div>
-
-          <div>
-            <div>Order</div>
-            <div>
-                <input
-                type="text"
-                class="form-control"
-                id="Order"
-                required
-                [(ngModel)]="entity.Order"
-                name="Order"
-              />
-            </div>
-          </div>
-
-          <div>
-              <div>Books</div>
-              <div></div>
-          </div>
-
-          <div>
-              <button (click)="save()" class="btn btn-success">Submit</button>
-          </div>
-      </div>
-  </div>
-</div> -->
-<!-- <input type="text" matInput required formControlName="Name">
-<form [formGroup]="form"></form> -->
 <h2 mat-dialog-title>Novo conteúdo</h2>
 <form [formGroup]="formGroup">
   <mat-dialog-content class="mat-typography">
@@ -96,11 +10,11 @@
 
               </mat-form-field>
          </div>
-          <!-- <div style="display: flex; justify-content: start;">
+          <div style="display: flex; justify-content: start;">
               <mat-form-field appearance="outline" style="margin-right: 3%; width: 250px;">
-                  <ngx-mat-file-input  placeholder="Banner"></ngx-mat-file-input>
+                  <app-upload  placeholder="Banner"></app-upload>
               </mat-form-field>
-          </div> -->
+          </div>
           <div style="display: flex; justify-content: start;">
               <mat-form-field appearance="outline" style="margin-right: 3%; width: 250px;">
                   <mat-label>Titulo: </mat-label>

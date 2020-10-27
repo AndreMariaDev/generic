@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+
 import {MatDialog} from '@angular/material/dialog';
-import { ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormControl, FormGroup , Validators} from '@angular/forms';
 
 import { Base } from '../model/base';
 import { BaseService } from '../core/service';
@@ -10,16 +10,30 @@ export class UpdateBaseComponent<T extends Base> {
 
   entity:T ;
   submitted = false;
+  formGroup: FormGroup;
 
   constructor(
-    private appService: BaseService<T>,
+    public appService: BaseService<T>,
+    entityT:(new () => T),
+    public formBuilder : FormBuilder,
     public dialog: MatDialog,
-    private activatedRoute: ActivatedRoute) {
+    fieldsForm:String[]
+    ) {
+
+      this.entity = new entityT();
+      this.formGroup = this.formBuilder.group({​​​​​​​
+      });
+
+      for (let index = 0; index < fieldsForm.length; index++) {
+        const element = fieldsForm[index];
+        this.formGroup.addControl(element.toString(), new FormControl('', Validators.required));;
+      }
   }
 
-  getItem(id: String): void {
-    this.appService.getByID(id).subscribe(
+  getItem = async (id: String) => {
+    await  this.appService.getByID(id).subscribe(
       response => {
+        console.log('await');
         console.log(response);
         if(!response){
           this.dialog.open(DialogComponent,{
@@ -28,9 +42,6 @@ export class UpdateBaseComponent<T extends Base> {
         } else {
           this.entity = response;
         }
-        this.dialog.open(DialogComponent,{
-          width: '350px',
-          data: {title: 'Atenção', content: 'Processo Realizado com Sucesso!'}});
       },
       error => {
         this.dialog.open(DialogComponent,{

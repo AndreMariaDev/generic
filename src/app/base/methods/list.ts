@@ -18,7 +18,7 @@ export class ListBaseComponent<T extends Base> {
     par.push({ key:'_offset',values:'1'});
     par.push({ key:'_limit',values:'10'});
 
-    this.appService.GetByFilter(new QueryOptionsGeneric(par)).subscribe(
+    this.appService.getByFilter(new QueryOptionsGeneric(par)).subscribe(
       response => {
         this.dataSource = new MatTableDataSource<T>(response);
       },

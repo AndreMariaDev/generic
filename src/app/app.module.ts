@@ -32,7 +32,12 @@ import { BookModule } from './book/book.module';
 import { CreateComponent as CreateBannerComponent } from './banner/create/create.component';
 import { CreateComponent } from './user/create/create.component';
 import { ListComponent } from './user/list/list.component';
-import { UpdateComponent } from './user/update/update.component'
+import { UpdateComponent } from './user/update/update.component';
+
+import { BaseResolve } from './base/core/resolve';
+import { BaseService } from './base/core/service';
+import { UserResolver } from './user/user.resolver';
+import { UserService } from './user/User.service';
 
 @NgModule({
   declarations: [
@@ -69,7 +74,12 @@ import { UpdateComponent } from './user/update/update.component'
     AuthorModule,
     BookModule
   ],
-  providers: [],
+  providers: [
+    UserService,
+    UserResolver
+    //BaseService,
+    //BaseResolve
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

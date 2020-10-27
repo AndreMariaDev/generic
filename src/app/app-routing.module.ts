@@ -11,7 +11,9 @@ import { UpdateComponent as UpdateAuthorComponent } from './author/update/update
 
 import { CreateComponent as CreateBannerComponent } from './banner/create/create.component';
 import { CreateComponent as CreateUserComponent } from './user/create/create.component';
-import { ListComponent } from './user/list/list.component'
+import { ListComponent } from './user/list/list.component';
+import { UpdateComponent } from './user/update/update.component';
+import { UserResolver } from './user/user.resolver';
 
 const routes: Routes = [
     { path: 'book/create', component: CreateBookComponent },
@@ -23,6 +25,7 @@ const routes: Routes = [
     { path: 'banner/create', component: CreateBannerComponent },
     { path: 'user/create', component: CreateUserComponent },
     { path: 'user/list', component: ListComponent },
+    { path: 'user/update/:id', component: UpdateComponent, resolve:{ entity: UserResolver } },
 ];
 
 @NgModule({

@@ -21,6 +21,7 @@ export class CreateComponent extends CreateBaseComponent<User>  {
     this.formGroup.addControl('UserCodeExternal', new FormControl(this.entity.UserCodeExternal, Validators.required));
     this.formGroup.addControl('Profile', new FormControl(this.entity.Profile, Validators.required));
 
+    console.log(JSON.stringify(this.entity));
   }
 
   // constructor(appService: UserService,dialog: MatDialog) {

@@ -14,13 +14,20 @@ export class CreateBaseComponent<T extends Base> {
   formGroup: FormGroup;
 
   constructor(
-      private appService: BaseService<T>,
-      entityT:(new () => T),
-      public formBuilder : FormBuilder,
-      public dialog: MatDialog
+        private appService: BaseService<T>,
+        entityT:(new () => T),
+        public formBuilder : FormBuilder,
+        public dialog: MatDialog
       ) {
+
       this.entity = new entityT();
       var guid = new Guid();
+      // this.entity.Id = guid.uuid();
+      // this.entity.IsActive = true;
+      // this.entity.CreateDate = new Date();
+      // this.entity.Status = 1
+      // this.entity.UserCode = '123456';
+
       this.formGroup = this.formBuilder.group({​​​​​​​
         Id : [guid.uuid()],
         IsActive: [true],
@@ -28,7 +35,6 @@ export class CreateBaseComponent<T extends Base> {
         Status: [1],
         UserCode: ['123456']
       });
-
   }
 
   save(): void {

@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpEvent } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -40,7 +40,7 @@ export class BaseService<T extends Base> {
           .pipe(map((data: any) => this.serializer.fromJson(data) as T));
       }
 
-      public GetByFilter(queryOptions: QueryOptionsGeneric): Observable<T[]> {
+      public getByFilter(queryOptions: QueryOptionsGeneric): Observable<T[]> {
 
         if(queryOptions.toQueryString()){
           return this.httpClient
@@ -54,6 +54,19 @@ export class BaseService<T extends Base> {
           .pipe(map((data: any) => this.convertData(data.items)));
         }
 
+      }
+
+      public upload(file:File): Observable<String> {
+        const formData: FormData = new FormData();
+
+        formData.append('file', file);
+
+        return this.httpClient
+          .post<T>(`${this.url}/${this.endpoint}`, formData,{
+            reportProgress: true,
+            responseType: 'json'
+          })
+          .pipe(map((result)=>{ console.log(result); return ''; }));
       }
 
       private convertData(data: any): T[] {
