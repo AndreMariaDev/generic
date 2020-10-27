@@ -11,9 +11,7 @@
               </mat-form-field>
          </div>
           <div style="display: flex; justify-content: start;">
-              <mat-form-field appearance="outline" style="margin-right: 3%; width: 250px;">
-                  <app-upload  placeholder="Banner"></app-upload>
-              </mat-form-field>
+              <button mat-button [mat-dialog-close]="true" (click)="onOpenUpload()" cdkFocusInitial>Upload</button>
           </div>
           <div style="display: flex; justify-content: start;">
               <mat-form-field appearance="outline" style="margin-right: 3%; width: 250px;">

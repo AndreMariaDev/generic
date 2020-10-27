@@ -43,7 +43,7 @@ import { UploadComponent } from './upload/upload.component';
     MatDialogModule,
     MatInputModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
   ]
 })
 export class BannerModule { }

@@ -6,6 +6,12 @@ import { Serializer } from './serializer';
 import { QueryOptionsGeneric } from './queryOptions';
 import { Base } from '../model/base';
 
+export interface Result
+{
+    key:String
+    value:String
+}
+
 export class BaseService<T extends Base> {
     constructor(
         private httpClient: HttpClient,
@@ -56,17 +62,20 @@ export class BaseService<T extends Base> {
 
       }
 
-      public upload(file:File): Observable<String> {
+      public upload(file:File): Observable<Result> {
         const formData: FormData = new FormData();
-
+        debugger;
         formData.append('file', file);
 
         return this.httpClient
-          .post<T>(`${this.url}/${this.endpoint}`, formData,{
+          .post<Result>(`${this.url}/Upload/upload`, formData,{
             reportProgress: true,
             responseType: 'json'
           })
-          .pipe(map((result)=>{ console.log(result); return ''; }));
+          .pipe(map((result)=>{
+            let item: Result = result as Result;
+            console.log(result); return item ;
+          }));
       }
 
       private convertData(data: any): T[] {

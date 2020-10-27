@@ -5,6 +5,7 @@ import { Banner } from '../banner.model';
 import { BannerService } from '../banner.service';
 import { CreateBaseComponent } from '../../base/methods/create';
 import { FormBuilder, Validators, FormControl} from '@angular/forms';
+import { UploadComponent } from '../upload/upload.component';
 
 
 @Component({
@@ -27,4 +28,11 @@ export class CreateComponent extends CreateBaseComponent<Banner>  {
 
   }
 
+
+  onOpenUpload(){
+    this.dialog.open(UploadComponent,{
+      width: '350px',
+      height: '350px',
+      data: {title: 'Upload Banner', content: 'Processo Realizado com Sucesso!'}});
+  }
 }

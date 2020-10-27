@@ -34,8 +34,6 @@ import { CreateComponent } from './user/create/create.component';
 import { ListComponent } from './user/list/list.component';
 import { UpdateComponent } from './user/update/update.component';
 
-import { BaseResolve } from './base/core/resolve';
-import { BaseService } from './base/core/service';
 import { UserResolver } from './user/user.resolver';
 import { UserService } from './user/User.service';
 
@@ -77,8 +75,6 @@ import { UserService } from './user/User.service';
   providers: [
     UserService,
     UserResolver
-    //BaseService,
-    //BaseResolve
   ],
   bootstrap: [AppComponent]
 })
